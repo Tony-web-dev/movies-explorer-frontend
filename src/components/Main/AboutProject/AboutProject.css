@@ -1,0 +1,71 @@
+.project {
+  display: flex;
+  width: calc(100% - 140px);
+  min-height: 608px;
+  flex-direction: column;
+}
+
+.project__articles {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 70px;
+}
+
+.project__article {
+  max-width: 550px;
+}
+
+.project__article-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.04em;
+  margin: 0 0 26px;
+}
+
+.project__article-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  margin: 0;
+}
+
+.project__timing-table {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  padding-top: 111px;
+  justify-items: center;
+}
+
+.project__timing-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.project__timing-cell_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  width: 100%;
+  height: 36px;
+  margin: 0;
+  background-color: #f2f2f2;
+}
+
+.project__timing-cell_title_bgc-green {
+  background-color: #2be080;
+}
+
+.project__timing-cell_text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  margin: 14px 0 0;
+  color: #a0a0a0;
+}
