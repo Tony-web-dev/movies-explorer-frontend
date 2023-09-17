@@ -5,7 +5,7 @@ import studentPhoto from "../../../images/student_photo.jpg";
 
 export default function AboutMe() {
   return (
-    <section className="student">
+    <section className="section student">
       <SectionTitle>Студент</SectionTitle>
       <div className="student__profile">
         <div className="student__profile-info">
@@ -28,7 +28,7 @@ export default function AboutMe() {
         <img
           src={studentPhoto}
           alt="Фото профиля"
-          className="student_profile-img"
+          className="student__profile-img"
         />
       </div>
       </section>

@@ -11,8 +11,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: calc(100% - 140px);
-  padding: 0 30px;
+  width: calc(100% - 140px)
 }
 
 .header__nav-list {
@@ -43,4 +42,27 @@
 .header__nav-link_signup {
   background-color: transparent;
   color: #fff;
+}
+
+@media screen and (max-width: 1023px) {
+  .header__container {
+    width: calc(100% - 60px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__container {
+    width: calc(100% - 28px);
+  }
+
+  .header__nav-list {
+    gap: 14px;
+  }
+
+  .header__nav-link {
+    font-size: 10px;
+    line-height: 16px;
+    min-width: 54px;
+    height: 26px;
+  }
 }

@@ -1,8 +1,4 @@
 .techs {
-  display: flex;
-  width: 100%;
-  min-height: 625px;
-  flex-direction: column;
   align-items: center;
   background-color: #f5f5f5;
 }
@@ -30,7 +26,7 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
-  margin: 100px 0 0;
+  margin: 100px 0;
   padding: 0;
 }
 
@@ -46,4 +42,49 @@
   font-weight: 400;
   line-height: 17px;
   letter-spacing: -0.04em;
+}
+
+@media screen and (max-width: 1023px) {
+  .techs__title {
+    margin: 80px 0 22px;
+  }
+
+  .techs__subtitle {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .techs__list {
+    margin: 83px 0 90px;
+  }
+
+  .techs__item {
+    width: 84px;
+    min-height: 57px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .techs {
+    background-color: #fff;
+  }
+
+  .techs__title {
+    font-size: 30px;
+    line-height: 36px;
+    margin: 60px 0 24px;
+  }
+
+  .techs__subtitle {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .techs__list {
+    margin: 50px 0 70px;
+    flex-wrap: wrap;
+    max-width: 178px;
+  }
 }

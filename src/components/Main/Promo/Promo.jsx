@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Promo() {
   return (
-    <section className="promo">
+    <section className="section promo">
       <div className="promo__text-container">
         <h1 className="promo__title">
           Учебный проект студента факультета Веб&#8209;разработки
@@ -19,6 +19,7 @@ export default function Promo() {
         alt="Графические линии"
         className="promo__img"
       />
+
     </section>
   );
 };

@@ -3,8 +3,8 @@ import "./Portfolio.css";
 
 export default function Portfolio() {
   return (
-    <article className="portfolio">
-      <h3 className="portfolio__subtitle">Портфолио</h3>
+    <section className="section portfolio">
+      <h2 className="portfolio__title">Портфолио</h2>
       <ul className="portfolio__list">
         <li className="portfolio__item">
           <p className="portfolio__item-text">Статичный сайт</p>
@@ -25,6 +25,6 @@ export default function Portfolio() {
           </Link>
         </li>
       </ul>
-    </article>
+    </section>
   )
 };

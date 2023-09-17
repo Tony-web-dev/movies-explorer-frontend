@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <h2 className="footer__title">
-        Учебный проект Яндекс.Практикум х BeatFilm.
+        Учебный проект Яндекс.Практикум х&nbsp;BeatFilm.
       </h2>
       <div className="footer__columns">
         <div className="footer__column">

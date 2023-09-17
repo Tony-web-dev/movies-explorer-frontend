@@ -17,3 +17,7 @@
   transition: opacity 0.5s ease;
   cursor: pointer;
 }
+
+/* * {
+  outline: 1px solid yellowgreen;
+} */
