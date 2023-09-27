@@ -1,11 +1,11 @@
 import "./App.css";
-import Main from "../Main/Main.jsx";
+import Movies from "../Movies/Movies.jsx";
 
 export default function App() {
 
   return (
     <div className="page">
-      <Main />
+      <Movies />
     </div>
   );
 };

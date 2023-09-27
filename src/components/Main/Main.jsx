@@ -1,4 +1,3 @@
-import "./Main.css";
 import Header from "../Header/Header.jsx";
 import Promo from "./Promo/Promo.jsx";
 import AboutProject from "./AboutProject/AboutProject.jsx";

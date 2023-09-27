@@ -12,8 +12,39 @@
   -moz-text-size-adjust: 100%;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.section {
+  width: calc(100% - 140px);
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1023px) {
+  .section {
+    width: calc(100% - 100px);
+  }
+}
+
+@media screen and (max-width: 727px) {
+  .section {
+    width: calc(100% - 36px);
+  }
+}
+
 .link-hover:hover {
   opacity: 0.7;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.button-hover:hover {
+  opacity: 0.8;
   transition: opacity 0.5s ease;
   cursor: pointer;
 }

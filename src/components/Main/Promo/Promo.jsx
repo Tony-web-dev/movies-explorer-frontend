@@ -12,7 +12,7 @@ export default function Promo() {
         <p className="promo__paragraph">
           Листайте ниже, чтобы узнать больше про этот проект и&nbsp;его создателя.
         </p>
-        <Link to="https://www.artlebedev.ru/typograf/" className="promo__anchor-link link-hover" target="_blank">Узнать больше</Link>
+        <Link to="/#project" className="promo__anchor-link link-hover">Узнать больше</Link>
       </div>
       <img
         src={promoImg}
