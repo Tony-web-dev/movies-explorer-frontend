@@ -5,13 +5,12 @@ import MoviesCardList from "./MoviesCardList/MoviesCardList.jsx";
 import { movies } from "../../utils/temporaryBase.js";
 
 export default function Movies() {
-
   return (
     <>
     <HeaderForLogged />
     <main className="main">
       <SearchForm />
-      <MoviesCardList movies={movies}/>
+      <MoviesCardList movies={movies} />
     </main>
     <Footer />
   </>

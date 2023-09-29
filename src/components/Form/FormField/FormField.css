@@ -1,0 +1,32 @@
+.form__label {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__subtitle {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  color: #a0a0a0;
+}
+
+.form__input {
+  padding: 5px 0 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  border: none;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.form__input::placeholder {
+  color: #000;
+}
+
+.form__input-error {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  color: #ff3055;
+  padding: 4px 0 8px;
+}

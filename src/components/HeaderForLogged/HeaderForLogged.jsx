@@ -3,7 +3,7 @@ import "./HeaderForLogged.css";
 import Logo from "../Logo/Logo.jsx";
 
 
-export default function Header() {
+export default function HeaderForLogged() {
   return (
     <header className="header">
       <div className="header__container">

@@ -7,7 +7,7 @@ export default function SearchForm() {
         <div className="search__form-container">
           <input
             type="text"
-            className="search__input"
+            className="search__input input-focus"
             placeholder="Фильм"
             name="searchInput"
             defaultValue=""
