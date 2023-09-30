@@ -4,7 +4,7 @@ import FormField from "./FormField/FormField.jsx";
 
 export default function Form({ name }) {
   return (
-    <form className="form" noValidate>
+    <form className="form">
       <fieldset className="form__fieldset">
         {{
           register:
@@ -55,4 +55,4 @@ export default function Form({ name }) {
       </div>
     </form>
   )
-}
+};

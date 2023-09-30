@@ -1,8 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./Header.css";
 import Logo from "../Logo/Logo.jsx";
-import { useEffect, useState } from "react";
-import Navigation from "../Navigation/Navigation";
+import Navigation from "../Navigation/Navigation.jsx";
 
 
 export default function Header() {
@@ -56,11 +56,11 @@ export default function Header() {
           :
           <>
             <Navigation isBurgermenuOpen={isBurgermenuOpen} closeBurger={toggleBurger} />
-            <button type="button" className={`header__btn-burger ${location.pathname === "/" ? "header__btn-burger_page_landing" : ""}`} onClick={toggleBurger}></button>
+            <button type="button" className={`header__btn-burger ${location.pathname === "/" ? "header__btn-burger_page_landing" : ""} button-hover`} onClick={toggleBurger}></button>
           </>
 
         }
       </div>
     </header>
   )
-}
+};

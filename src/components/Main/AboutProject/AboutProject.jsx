@@ -37,4 +37,4 @@ export default function AboutProject() {
       </div>
     </section>
   )
-}
+};

@@ -1,5 +1,5 @@
-import Form from "../Form/Form";
-import Greeting from "../Greeting/Greeting";
+import Form from "../Form/Form.jsx";
+import Greeting from "../Greeting/Greeting.jsx";
 
 export default function Login() {
   return (
