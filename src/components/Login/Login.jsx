@@ -1,6 +1,5 @@
 import Form from "../Form/Form";
 import Greeting from "../Greeting/Greeting";
-import "./Login.css";
 
 export default function Login() {
   return (

@@ -1,10 +1,10 @@
 import "./Profile.css";
-import HeaderForLogged from "../HeaderForLogged/HeaderForLogged";
+import Header from "../Header/Header.jsx";
 
 export default function Profile() {
   return (
     <>
-      <HeaderForLogged />
+      <Header />
       <main className="main">
         <section className="section profile">
           <h1 className="profile__title">Привет, Виталий!</h1>

@@ -1,4 +1,3 @@
-import "./Register.css";
 import Greeting from "../Greeting/Greeting.jsx";
 import Form from "../Form/Form.jsx";
 
