@@ -1,6 +1,6 @@
 import "./FormField.css";
 
-export default function FormField({subtitle, type, name, error}) {
+export default function FormField({ subtitle, type, name }) {
   return (
     <label className="form__label">
       <span className="form__subtitle">{subtitle}</span>

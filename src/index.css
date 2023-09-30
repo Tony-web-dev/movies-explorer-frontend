@@ -63,6 +63,7 @@
 .btn-submit_disabled {
   background-color: #f8f8f8;
   color: #c2c2c2;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 1023px) {

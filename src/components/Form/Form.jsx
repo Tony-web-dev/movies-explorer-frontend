@@ -12,8 +12,8 @@ export default function Form({ name }) {
               subtitle="Имя"
               type="text"
               name="name"
-              minLength={2}
-              maxLength={30}
+              minLength="2"
+              maxLength="30"
             />,
           login: null
         }[name]}
@@ -34,8 +34,8 @@ export default function Form({ name }) {
       <div className="form__submit-container">
         <span className="form__submit-error">текст ошибки</span>
         {{
-          register: <button className="btn-submit button-hover">Зарегистрироваться</button>,
-          login: <button className="btn-submit button-hover">Войти</button>
+          register: <button className={`btn-submit button-hover`}>Зарегистрироваться</button>,
+          login: <button className={`btn-submit button-hover`}>Войти</button>
         }[name]}
 
         <p className="form__submit-question">

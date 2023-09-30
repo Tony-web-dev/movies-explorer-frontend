@@ -19,8 +19,8 @@ export default function Navigation({ isBurgermenuOpen, closeBurger }) {
         </li>
       </ul>
       <Link to="/profile" className={`navigation__link-account ${location.pathname === "/" ? "navigation__link-account_page_landing" : ""} link-hover`} onClick={closeBurger}>
-        <span class="navigation__account-span">Аккаунт</span>
-        <div class="navigation__account-logo" />
+        <span className="navigation__account-span">Аккаунт</span>
+        <div className="navigation__account-logo" />
       </Link>
     </nav>
   )
