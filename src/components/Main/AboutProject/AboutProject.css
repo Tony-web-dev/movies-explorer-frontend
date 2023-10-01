@@ -24,7 +24,7 @@
   margin: 0;
 }
 
-.project__timing-table {
+.project__table {
   display: grid;
   grid-template-columns: 1fr 4fr;
   padding-top: 111px;
@@ -32,14 +32,14 @@
   margin-bottom: 110px;
 }
 
-.project__timing-cell {
+.project__table-cell {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-.project__timing-cell_title {
+.project__table-cell-title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,11 +52,11 @@
   background-color: #f2f2f2;
 }
 
-.project__timing-cell_title_bgc-green {
+.project__table-cell-title_green {
   background-color: #2be080;
 }
 
-.project__timing-cell_text {
+.project__table-cell-text {
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
@@ -82,7 +82,7 @@
     line-height: 18px;
   }
 
-  .project__timing-table {
+  .project__table {
     grid-template-columns: 140px 4fr;
     padding-top: 93px;
     margin-bottom: 90px;
@@ -108,18 +108,18 @@
     line-height: 16px;
   }
 
-  .project__timing-table {
+  .project__table {
     grid-template-columns: 100px 4fr;
     padding-top: 60px;
     margin-bottom: 69px;
   }
 
-  .project__timing-cell_title {
+  .project__table-cell-title {
     font-size: 11px;
     line-height: 13px;
   }
 
-  .project__timing-cell_text {
+  .project__table-cell-text {
     font-size: 11px;
     line-height: 13px;
     margin-top: 10px;

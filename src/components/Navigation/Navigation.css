@@ -144,7 +144,21 @@
 }
 
 @media screen and (max-width: 400px) {
-  .navigation_open {
+  .navigation_popup {
     width: 100%;
+    padding: 145px 0 142px;
+  }
+
+  .navigation__list {
+    gap: 24px;
+  }
+
+  .navigation__link {
+    padding-bottom: 6px;
+  }
+
+  .navigation__btn-close {
+    top: 17px;
+    right: 17px;
   }
 }

@@ -3,7 +3,7 @@ import "./AboutProject.css";
 
 export default function AboutProject() {
   return (
-    <section className="section project" id="project">
+    <section className="section project" id={"project"}>
       <SectionTitle>О проекте</SectionTitle>
       <div className="project__articles">
         <div className="project__article">
@@ -23,16 +23,16 @@ export default function AboutProject() {
           </p>
         </div>
       </div>
-      <div className="project__timing-table">
-        <div className="project__timing-cell">
-          <h3 className="project__timing-cell_title project__timing-cell_title_bgc-green">
+      <div className="project__table">
+        <div className="project__table-cell">
+          <h3 className="project__table-cell-title project__table-cell-title_green">
             1&nbsp;неделя
           </h3>
-          <p className="project__timing-cell_text">Back-end</p>
+          <p className="project__table-cell-text">Back-end</p>
         </div>
-        <div className="project__timing-cell">
-          <h3 className="project__timing-cell_title">4&nbsp;недели</h3>
-          <p className="project__timing-cell_text">Front-end</p>
+        <div className="project__table-cell">
+          <h3 className="project__table-cell-title">4&nbsp;недели</h3>
+          <p className="project__table-cell-text">Front-end</p>
         </div>
       </div>
     </section>

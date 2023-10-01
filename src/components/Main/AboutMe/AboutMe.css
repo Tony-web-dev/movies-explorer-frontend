@@ -1,15 +1,14 @@
 .student__profile {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   width: 100%;
   margin-top: 66px;
 }
 
 .student__profile-info {
-  position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   max-width: 600px;
 }
 
@@ -25,20 +24,17 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 20px;
-  margin: 18px 0 26px;
+  margin: 18px 0 0;
 }
 
 .student__profile-text {
   font-size: 14px;
   font-weight: 400;
   line-height: 22px;
-  margin: 0;
+  margin: 28px 0 0;
 }
 
 .student__profile-link {
-  position: absolute;
-  left: 0;
-  bottom: 0;
   font-size: 14px;
   font-weight: 500;
   line-height: 17px;

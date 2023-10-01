@@ -1,8 +1,8 @@
-.header__logo {
+.logo {
   width: 38px;
   height: 38px;
 }
 
-.header__link_logo {
+.logo__link {
   line-height: 0;
 }

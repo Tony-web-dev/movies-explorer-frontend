@@ -6,7 +6,7 @@ export default function Navigation({ isBurgermenuOpen, closeBurger }) {
 
   return (
     <nav className={`navigation ${isBurgermenuOpen ? "navigation_popup" : ""}`}>
-      <button type="button" className="navigation__btn-close" onClick={closeBurger}></button>
+      <button type="button" className="navigation__btn-close button-hover" onClick={closeBurger}></button>
       <ul className="navigation__list">
         <li className="navigation__list-item">
           <Link to="/" className={`navigation__link ${location.pathname === "/" ? "navigation__link_active" : ""} link-hover`} onClick={closeBurger}>Главная</Link>

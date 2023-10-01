@@ -75,8 +75,7 @@
   gap: 14px;
 }
 
-.profile__btn-edit,
-.profile__btn-logout {
+.profile__button {
   background-color: transparent;
   border: none;
   font-size: 13px;
@@ -84,7 +83,8 @@
   line-height: 16px;
 }
 
-.profile__btn-logout {
+.profile__link-logout {
+  text-decoration: none;
   color: #ff3055;
 }
 
@@ -116,8 +116,7 @@
     margin-top: 330px;
   }
 
-  .profile__btn-edit,
-  .profile__btn-logout {
+  .profile__button {
     font-size: 12px;
     line-height: 15px;
   }

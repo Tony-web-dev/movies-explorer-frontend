@@ -1,5 +1,6 @@
 import "./Profile.css";
 import Header from "../Header/Header.jsx";
+import { Link } from "react-router-dom";
 
 export default function Profile() {
 
@@ -33,6 +34,8 @@ export default function Profile() {
                 className="profile__input input-focus"
                 name="email"
                 placeholder="pochta@mail.ru"
+                minLength="2"
+                maxLength="30"
                 required />
             </label>
 
@@ -42,8 +45,10 @@ export default function Profile() {
             <div className="profile__buttons-container">
               {/* пока нет валидации, кнопку закомментила */}
               {/* <button type="submit" className="btn-submit button-hover">Сохранить</button> */}
-              <button type="button" className="profile__btn-edit button-hover">Редактировать</button>
-              <button type="button" className="profile__btn-logout button-hover">Выйти из аккаунта</button>
+              <button type="button" className="profile__button button-hover">Редактировать</button>
+              <button type="button" className="profile__button button-hover">
+                <Link to="/" className="profile__link-logout">Выйти из аккаунта</Link>
+              </button>
             </div>
           </form>
         </section>

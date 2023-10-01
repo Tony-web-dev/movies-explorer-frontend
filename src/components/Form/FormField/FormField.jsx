@@ -8,6 +8,8 @@ export default function FormField({ subtitle, type, name }) {
         type={type}
         className="form__input input-focus"
         name={name}
+        minLength="2"
+        maxLength="30"
         placeholder=""
         required />
       <span className="form__input-error">текст ошибки</span>

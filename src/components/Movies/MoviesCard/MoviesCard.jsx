@@ -17,7 +17,7 @@ export default function MoviesCard({ name, src, trailerLink, duration}) {
   return (
     <li className="movie">
       <Link to={trailerLink} className="movie__link-trailer link-hover" target="_blank">
-        <img src={src} alt="Постер фильма" className="movie__poster" />
+        <img src={src} alt={`Постер фильма ${name}`} className="movie__poster" />
       </Link>
       <div className="movie__description">
         <div className="movie__info">

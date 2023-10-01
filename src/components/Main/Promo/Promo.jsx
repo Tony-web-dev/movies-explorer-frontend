@@ -1,6 +1,6 @@
 import "./Promo.css";
 import promoImg from "../../../images/promo_img.svg";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export default function Promo() {
   return (
@@ -12,14 +12,13 @@ export default function Promo() {
         <p className="promo__paragraph">
           Листайте ниже, чтобы узнать больше про этот проект и&nbsp;его создателя.
         </p>
-        <Link to="/#project" className="promo__anchor-link link-hover">Узнать больше</Link>
+        <HashLink smooth to="#project" className="promo__anchor-link link-hover">Узнать больше</HashLink>
       </div>
       <img
         src={promoImg}
         alt="Графические линии"
         className="promo__img"
       />
-
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Logo.css";
-import headerLogo from "../../images/header_logo.svg";
+import mainLogo from "../../images/main_logo.svg";
 
 export default function Logo({ setIsLogged }) {
 
@@ -10,11 +10,11 @@ export default function Logo({ setIsLogged }) {
   };
 
   return (
-    <Link to="/" className="header__link_logo link-hover" onClick={tempAuthClick}>
+    <Link to="/" className="logo__link link-hover" onClick={tempAuthClick}>
       <img
-        src={headerLogo}
+        src={mainLogo}
         alt="Логотип"
-        className="header__logo"
+        className="logo"
       />
     </Link>
   )

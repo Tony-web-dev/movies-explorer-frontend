@@ -5,25 +5,29 @@ export default function SearchForm() {
     <section className="search">
       <form className="search__form">
         <div className="search__form-container">
-          <input
-            type="text"
-            className="search__input input-focus"
-            placeholder="Фильм"
-            name="searchInput"
-            defaultValue=""
-            required=""
-          />
-          <button className="search__button button-hover">Найти</button>
+          <label>
+            <input
+              type="text"
+              className="search__input input-focus"
+              placeholder="Фильм"
+              name="searchInput"
+              defaultValue=""
+              required
+            />
+          </label>
+          <button type="submit" className="search__button button-hover">Найти</button>
         </div>
+        <span className="search__error">Введите ключевое слово для поиска!</span>
         <div className="search__checkbox-container">
           <input
             type="checkbox"
             className="checkbox__input"
             name="checkboxInput"
             id="checkboxInput"
+            placeholder=""
           />
           <label htmlFor="checkboxInput">
-            <div className="search__checkbox-slider">
+            <div className="search__checkbox-slider button-hover">
               <span className="search__checkbox-ball" />
             </div>
           </label>
