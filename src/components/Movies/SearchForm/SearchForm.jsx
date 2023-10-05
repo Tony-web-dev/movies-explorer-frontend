@@ -21,7 +21,7 @@ export default function SearchForm() {
         <div className="search__checkbox-container">
           <input
             type="checkbox"
-            className="checkbox__input"
+            className="search__checkbox-input"
             name="checkboxInput"
             id="checkboxInput"
             placeholder=""

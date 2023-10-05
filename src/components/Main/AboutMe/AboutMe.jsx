@@ -9,7 +9,7 @@ export default function AboutMe() {
       <SectionTitle>Студент</SectionTitle>
       <div className="student__profile">
         <div className="student__profile-info">
-          <div className="profile__text-container">
+          <div className="student__profile-text-container">
             <h2 className="student__profile-name">Виталий</h2>
             <h3 className="student__profile-about">
               Фронтенд-разработчик, 30&nbsp;лет
