@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 import "./Form.css";
 import FormField from "./FormField/FormField.jsx";
-import useFormValidation from "../../utils/useFormValidation";
 
-export default function Form({ name }) {
-  const { values, errors, handleChange, isValid } = useFormValidation();
+export default function Form({ name, onSubmit, errorMessage, values, handleChange, errors, isValid }) {
 
   return (
-    <form className="form">
+    <form className="form" onSubmit={onSubmit}>
       <fieldset className="form__fieldset">
         {{
           register:
@@ -42,6 +40,7 @@ export default function Form({ name }) {
       </fieldset>
 
       <div className="form__submit-container">
+        <span className="form__submit-error">{errorMessage}</span>
         {{
           register: <button type="submit" className={`btn-submit ${!isValid && "btn-submit_disabled"} button-hover`} >Зарегистрироваться</button>,
           login: <button type="submit" className={`btn-submit ${!isValid && "btn-submit_disabled"} button-hover`} >Войти</button>

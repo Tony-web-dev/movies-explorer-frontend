@@ -8,8 +8,8 @@ export default function FormField({ subtitle, type, name, errors, handleChange, 
         type={type}
         className="form__input input-focus"
         name={name}
-        value={values[name] || ""}
         onChange={handleChange}
+        value={values[name]}
         minLength="2"
         maxLength="30"
         placeholder=""
