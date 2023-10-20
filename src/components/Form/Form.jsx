@@ -30,7 +30,6 @@ export default function Form({ name }) {
       </fieldset>
 
       <div className="form__submit-container">
-        <span className="form__submit-error">текст ошибки</span>
         {{
           register: <button type="submit" className={`btn-submit button-hover`}>Зарегистрироваться</button>,
           login: <button type="submit" className={`btn-submit button-hover`}>Войти</button>

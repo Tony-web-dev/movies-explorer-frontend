@@ -1,6 +1,7 @@
 import "./SearchForm.css";
 
 export default function SearchForm() {
+
   return (
     <section className="search">
       <form className="search__form">
@@ -11,13 +12,13 @@ export default function SearchForm() {
               className="search__input input-focus"
               placeholder="Фильм"
               name="searchInput"
-              defaultValue=""
+              value=""
               required
             />
           </label>
           <button type="submit" className="search__button button-hover">Найти</button>
         </div>
-        <span className="search__error">Введите ключевое слово для поиска!</span>
+          <span className="search__error">Введите ключевое слово для поиска!</span>
         <div className="search__checkbox-container">
           <input
             type="checkbox"

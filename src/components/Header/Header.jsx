@@ -36,8 +36,7 @@ export default function Header() {
   return (
     <header className={`header ${location.pathname === "/" ? "header_page_landing" : ""}`}>
       <div className="header__container">
-        <Logo setIsLogged={setIsLogged}/> {/* временная авторизация */}
-
+        <Logo  setIsLogged={setIsLogged}/> {/* временная авторизация */}
           {location.pathname === "/" && !isLogged ?
             <nav className="header__nav">
               <ul className="header__nav-list header__nav-list_page_landing">

@@ -16,7 +16,7 @@ export default function MoviesCardList({ movies }) {
       visibleCounter.init = 5
       visibleCounter.step = 2
     }
-    return visibleCounter
+    return visibleCounter;
   }
 
   function clickBtnMore() {
