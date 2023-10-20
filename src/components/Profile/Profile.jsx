@@ -1,8 +1,10 @@
 import "./Profile.css";
 import Header from "../Header/Header.jsx";
 import { Link } from "react-router-dom";
+import useFormValidation from "../../utils/useFormValidation.js";
 
 export default function Profile() {
+  const { values, handleChange, errors, isValid } = useFormValidation();
 
   return (
     <>
@@ -20,13 +22,15 @@ export default function Profile() {
                   type="text"
                   className="profile__input input-focus"
                   name="name"
-                  placeholder="Виталий"
+                  placeholder="Ваше имя"
+                  defaultValue={"Виталий" || ""}
+                  onChange={handleChange}
                   minLength="2"
                   maxLength="30"
                   required />
               </label>
 
-              <span className="profile__input-error">текст ошибки</span>
+              <span className="profile__input-error">{errors.name}</span>
 
               <label className="profile__label">
                 <span className="profile__subtitle">E-mail</span>
@@ -34,18 +38,19 @@ export default function Profile() {
                   type="text"
                   className="profile__input input-focus"
                   name="email"
-                  placeholder="pochta@mail.ru"
+                  placeholder="Ваш e-mail"
+                  defaultValue={"pochta@mail.ru" || ""}
+                  onChange={handleChange}
                   minLength="2"
                   maxLength="30"
                   required />
               </label>
 
-              <span className="profile__input-error">текст ошибки</span>
+              <span className="profile__input-error">{errors.email}</span>
             </fieldset>
 
             <div className="profile__buttons-container">
-              {/* пока нет валидации, кнопку закомментила */}
-              {/* <button type="submit" className="btn-submit button-hover">Сохранить</button> */}
+              <button type="submit" className={`btn-submit ${!isValid && "btn-submit_disabled"} button-hover`}>Сохранить</button>
               <button type="button" className="profile__button button-hover">Редактировать</button>
               <button type="button" className="profile__button button-hover">
                 <Link to="/" className="profile__link-logout">Выйти из аккаунта</Link>

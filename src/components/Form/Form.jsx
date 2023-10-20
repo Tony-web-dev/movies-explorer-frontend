@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import "./Form.css";
 import FormField from "./FormField/FormField.jsx";
+import useFormValidation from "../../utils/useFormValidation";
 
 export default function Form({ name }) {
+  const { values, errors, handleChange, isValid } = useFormValidation();
+
   return (
     <form className="form">
       <fieldset className="form__fieldset">
@@ -12,6 +15,9 @@ export default function Form({ name }) {
               subtitle="Имя"
               type="text"
               name="name"
+              values={values}
+              handleChange={handleChange}
+              errors={errors}
             />,
           login: null
         }[name]}
@@ -20,19 +26,25 @@ export default function Form({ name }) {
           subtitle="E-mail"
           type="email"
           name="email"
+          values={values}
+          handleChange={handleChange}
+          errors={errors}
         />
 
         <FormField
           subtitle="Пароль"
           type="password"
           name="password"
+          values={values}
+          handleChange={handleChange}
+          errors={errors}
         />
       </fieldset>
 
       <div className="form__submit-container">
         {{
-          register: <button type="submit" className={`btn-submit button-hover`}>Зарегистрироваться</button>,
-          login: <button type="submit" className={`btn-submit button-hover`}>Войти</button>
+          register: <button type="submit" className={`btn-submit ${!isValid && "btn-submit_disabled"} button-hover`} >Зарегистрироваться</button>,
+          login: <button type="submit" className={`btn-submit ${!isValid && "btn-submit_disabled"} button-hover`} >Войти</button>
         }[name]}
 
         <p className="form__submit-question">

@@ -1,7 +1,7 @@
 import "./InfoTooltip.css";
 import successLogo from "../../images/action_success.svg";
 import failLogo from "../../images/action_fail.svg";
-import { SOMETHING_WRONG } from "../../utils/responces.js";
+import { SOMETHING_WRONG } from "../../utils/responses.js";
 
 export default function InfoTooltip({ status, tooltipMessage, onClose }) {
   return (
