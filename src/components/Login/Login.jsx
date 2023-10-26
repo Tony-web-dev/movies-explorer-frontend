@@ -2,7 +2,7 @@ import useFormValidation from "../../utils/useFormValidation.js";
 import Form from "../Form/Form.jsx";
 import Greeting from "../Greeting/Greeting.jsx";
 
-export default function Login({ onLogin, errorMessages }) {
+export default function Login({ onLogin, errorMessage }) {
   const { values, errors, handleChange, isValid } = useFormValidation();
 
   function handleSubmit(e) {
@@ -14,7 +14,7 @@ export default function Login({ onLogin, errorMessages }) {
     <main className="main">
       <section className="section auth">
         <Greeting>Рады видеть!</Greeting>
-        <Form name="login" onSubmit={handleSubmit} errors={errors} handleChange={handleChange} errorMessages={errorMessages} isValid={isValid} values={values} />
+        <Form name="login" onSubmit={handleSubmit} errors={errors} handleChange={handleChange} errorMessage={errorMessage} isValid={isValid} values={values} />
       </section>
     </main>
   )

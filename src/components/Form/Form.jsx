@@ -42,8 +42,8 @@ export default function Form({ name, onSubmit, errorMessage, values, handleChang
       <div className="form__submit-container">
         <span className="form__submit-error">{errorMessage}</span>
         {{
-          register: <button type="submit" className={`btn-submit ${!isValid && "btn-submit_disabled"} button-hover`} >Зарегистрироваться</button>,
-          login: <button type="submit" className={`btn-submit ${!isValid && "btn-submit_disabled"} button-hover`} >Войти</button>
+          register: <button type="submit" className={`btn-submit ${!isValid && "btn-submit_disactive"} button-hover`} >Зарегистрироваться</button>,
+          login: <button type="submit" className={`btn-submit ${!isValid && "btn-submit_disactive"} button-hover`} >Войти</button>
         }[name]}
 
         <p className="form__submit-question">

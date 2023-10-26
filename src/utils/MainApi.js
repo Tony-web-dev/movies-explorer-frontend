@@ -52,17 +52,15 @@ class MainApi {
     .then((user) => user);
   }
 
-  setUserInfo({ name, email }) {
+  setUserInfo(name, email, token) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: {
-        "Accept": "application/json",
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${localStorage.getItem("jwt")}`
+        "Authorization": `Bearer ${token}`
       },
-      body: JSON.stringify({name, email}),
+      body: JSON.stringify({name: name, email: email}),
     })
-    .then((res) => console.log(res))
     .then(this._checkResponse);
   }
 
