@@ -1,6 +1,6 @@
 const MOVIES_API_BASE_URL = "https://api.nomoreparties.co/beatfilm-movies";
-// const API_BASE_URL = "https://api.diplomtimush.nomoredomainsicu.ru";
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://api.diplomtimush.nomoredomainsicu.ru";
+// const API_BASE_URL = "http://localhost:3000";
 
 const STATUS_SUCCESS = "success";
 const STATUS_FAIL = "fail";
