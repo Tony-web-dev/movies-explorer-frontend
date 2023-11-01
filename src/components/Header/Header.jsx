@@ -5,9 +5,8 @@ import Logo from "../Logo/Logo.jsx";
 import Navigation from "../Navigation/Navigation.jsx";
 
 
-export default function Header() {
+export default function Header({ isLoggedIn }) {
   const location = useLocation();
-  const [isLogged, setIsLogged] = useState(false);
   const [isBurgermenuOpen, setIsBurgermenuOpen] = useState(false);
 
 
@@ -36,9 +35,8 @@ export default function Header() {
   return (
     <header className={`header ${location.pathname === "/" ? "header_page_landing" : ""}`}>
       <div className="header__container">
-        <Logo setIsLogged={setIsLogged}/> {/* временная авторизация */}
-
-          {location.pathname === "/" && !isLogged ?
+        <Logo />
+          {location.pathname === "/" && !isLoggedIn ?
             <nav className="header__nav">
               <ul className="header__nav-list header__nav-list_page_landing">
                 <li className="header__nav-item">

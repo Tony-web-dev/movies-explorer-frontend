@@ -60,10 +60,14 @@
   color: #fff;
 }
 
-.btn-submit_disabled {
+.btn-submit_disactive {
   background-color: #f8f8f8;
   color: #c2c2c2;
   pointer-events: none;
+}
+
+.btn-submit_disable {
+  visibility: hidden;
 }
 
 @media screen and (max-width: 1023px) {

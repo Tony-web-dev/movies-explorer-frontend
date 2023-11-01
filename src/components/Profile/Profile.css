@@ -17,10 +17,17 @@
   margin-top: 123px;
 }
 
+.profile__form-fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
 .profile__label {
   display: flex;
   justify-content: space-between;
-
 }
 
 .profile__label:last-of-type {
@@ -42,13 +49,14 @@
   font-weight: 400;
   line-height: 13px;
   padding: 0;
+  background-color: transparent;
 }
 
 .profile__input::placeholder {
   color: #000;
 }
 
-.profile__error {
+.profile__input-error {
   font-size: 10px;
   font-weight: 400;
   line-height: 12px;
@@ -57,7 +65,7 @@
   padding-top: 6px;
 }
 
-.profile__sbm-error {
+.profile__submit-error {
   margin-top: 170px;
   font-size: 11px;
   font-weight: 400;
@@ -97,7 +105,7 @@
     margin-top: 96px;
   }
 
-  .profile__sbm-error {
+  .profile__submit-error {
     margin-top: 160px;
   }
 }
@@ -112,7 +120,7 @@
     margin-top: 80px;
   }
 
-  .profile__sbm-error {
+  .profile__submit-error {
     margin-top: 330px;
   }
 
