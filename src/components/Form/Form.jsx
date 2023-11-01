@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom";
 import "./Form.css";
 import FormField from "./FormField/FormField.jsx";
+import useFormValidation from "../../utils/useFormValidation";
 
-export default function Form({ name, onSubmit, errorMessage, values, handleChange, errors, isValid }) {
+export default function Form({ name, onSubmit, errorMessage }) {
+  const { values, errors, isValid, handleChange } = useFormValidation();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit(values);
+  }
 
   return (
-    <form className="form" onSubmit={onSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <fieldset className="form__fieldset">
         {{
           register:

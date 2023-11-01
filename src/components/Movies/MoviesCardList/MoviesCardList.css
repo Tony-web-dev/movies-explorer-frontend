@@ -17,6 +17,15 @@
   padding: 0;
 }
 
+.movies__search-error {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #FF3055;
+  text-align: center;
+
+}
+
 .movies__btn-more {
   display: flex;
   align-items: center;

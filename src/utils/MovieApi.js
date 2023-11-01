@@ -1,6 +1,8 @@
+import { MOVIES_API_BASE_URL } from "./constants";
+
 class MovieApi {
   constructor() {
-    this._baseUrl = "https://api.nomoreparties.co/beatfilm-movies";
+    this._baseUrl = MOVIES_API_BASE_URL;
   }
 
   _checkResponse(res) {

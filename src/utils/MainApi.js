@@ -1,6 +1,8 @@
+import { API_BASE_URL } from "./constants";
+
 class MainApi {
   constructor() {
-    this._baseUrl = "http://localhost:3000";
+    this._baseUrl = API_BASE_URL;
     this._headers = {
       "Content-Type": "application/json"
     };
@@ -52,12 +54,12 @@ class MainApi {
     .then((user) => user);
   }
 
-  setUserInfo(name, email, token) {
+  setUserInfo(name, email) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
+        "Authorization": `Bearer ${localStorage.getItem("jwt")}`
       },
       body: JSON.stringify({name: name, email: email}),
     })
@@ -75,7 +77,7 @@ class MainApi {
     .then(this._checkResponse);
   }
 
-  saveMovie(savedMovie) {
+  saveMovie(movie) {
     return fetch(`${this._baseUrl}/movies`, {
       method: "POST",
       headers: {
@@ -83,17 +85,17 @@ class MainApi {
         "Authorization": `Bearer ${localStorage.getItem("jwt")}`
       },
       body: JSON.stringify({
-        country: savedMovie.country,
-        director: savedMovie.director,
-        duration: savedMovie.duration,
-        description: savedMovie.description,
-        year: savedMovie.year,
-        image: `https://api.nomoreparties.co${savedMovie.image.url}`,
-        trailerLink: savedMovie.trailerLink,
-        thumbnail: `https://api.nomoreparties.co${savedMovie.image.formats.thumbnail.url}`,
-        movieId: savedMovie.id,
-        nameRU: savedMovie.nameRU,
-        nameEN: savedMovie.nameEN
+        country: movie.country,
+        director: movie.director,
+        duration: movie.duration,
+        description: movie.description,
+        year: movie.year,
+        image: `https://api.nomoreparties.co${movie.image.url}`,
+        trailerLink: movie.trailerLink,
+        thumbnail: `https://api.nomoreparties.co${movie.image.formats.thumbnail.url}`,
+        movieId: movie.id,
+        nameRU: movie.nameRU,
+        nameEN: movie.nameEN
       })
     })
     .then(this._checkResponse);

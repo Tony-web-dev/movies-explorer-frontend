@@ -5,7 +5,7 @@ import useFormValidation from "../../utils/useFormValidation.js";
 import { useContext, useEffect } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-export default function Profile({ editProfile, isEdit, setIsEdit, logOut, isSuccess, successResult, isError, setIsError, isSending, errorMessage }) {
+export default function Profile({ onEdit, isEdit, setIsEdit, onLogout, isError, setIsError, isSending, errorMessage }) {
   const { values, handleChange, errors, isValid, resetForm } = useFormValidation();
   const currentUser = useContext(CurrentUserContext);
 
@@ -19,13 +19,12 @@ export default function Profile({ editProfile, isEdit, setIsEdit, logOut, isSucc
   }, [setIsError, values]);
 
   useEffect(() => {
-    successResult(false);
     setIsEdit(false);
-  }, [successResult, setIsEdit]);
+  }, [setIsEdit]);
 
   function handleSubmit(e) {
     e.preventDefault();
-    editProfile(values.name, values.email);
+    onEdit(values.name, values.email);
   };
 
   return (
@@ -33,7 +32,7 @@ export default function Profile({ editProfile, isEdit, setIsEdit, logOut, isSucc
       <Header />
       <main className="main">
         <section className="section profile">
-          <h1 className="profile__title">{`Привет, ${currentUser.name}`}</h1>
+          <h1 className="profile__title">{`Привет, ${currentUser.name}!`}</h1>
           <form
             className="profile__form"
             name="profile-name"
@@ -51,7 +50,7 @@ export default function Profile({ editProfile, isEdit, setIsEdit, logOut, isSucc
                   onChange={handleChange}
                   minLength="2"
                   maxLength="30"
-                  disabled={isSending}
+                  disabled={isSending || !isEdit}
                   required />
               </label>
 
@@ -69,7 +68,7 @@ export default function Profile({ editProfile, isEdit, setIsEdit, logOut, isSucc
                   onChange={handleChange}
                   minLength="2"
                   maxLength="30"
-                  disabled={isSending}
+                  disabled={isSending || !isEdit}
                   required />
               </label>
 
@@ -85,14 +84,13 @@ export default function Profile({ editProfile, isEdit, setIsEdit, logOut, isSucc
                   className={`profile__button button-hover`}
                   onClick={() => {
                     setIsEdit(true);
-                    successResult(false)
                   }}>
                 Редактировать
                 </button>
                 <button
                   type="button"
                   className="profile__button button-hover"
-                  onClick={logOut}>
+                  onClick={onLogout}>
                   <Link to="/" className="profile__link-logout">Выйти из аккаунта</Link>
                 </button>
               </>

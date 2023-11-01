@@ -29,6 +29,8 @@ export default function useFormValidation() {
       }
     } else if (name === "password") {
       setErrors({...errors, [name]: errorMessage});
+    } else if (name === "search") {
+      setErrors({...errors, [name]: errorMessage});
     }
   }
 
