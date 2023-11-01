@@ -198,8 +198,6 @@ export default function App() {
           tooltipMessage={tooltipMessage}
           onClose={handleClosePopup} />
       </div>
-
     </CurrentUserContext.Provider>
-
   );
 };

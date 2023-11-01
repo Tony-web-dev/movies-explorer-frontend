@@ -1,12 +1,12 @@
-const USER_ALREADY_EXISTS = "Пользователь с таким e-mail уже существует"; //use
-const USER_INVALID_AUTH = "Указан неверный логин или пароль"; //use
-const SUCCESS_UPDATED = "Данные успешно обновлены!"; //use
-const SUCCESS_REGISTRATION = "Вы успешно зарегистрировались!"; //use
-const SUCCESS_AUTHORIZATION = "Вы успешно вошли на сайт!"; //use
-const SOMETHING_WRONG = "Что-то пошло не так! Попробуйте еще раз"; //use
+const USER_ALREADY_EXISTS = "Пользователь с таким e-mail уже существует";
+const USER_INVALID_AUTH = "Указан неверный логин или пароль";
+const SUCCESS_UPDATED = "Данные успешно обновлены!";
+const SUCCESS_REGISTRATION = "Вы успешно зарегистрировались!";
+const SUCCESS_AUTHORIZATION = "Вы успешно вошли на сайт!";
+const SOMETHING_WRONG = "Что-то пошло не так! Попробуйте еще раз";
 const RESULT_NO_QUERY = "Выполните поисковый запрос, чтобы увидеть список фильмов";
-const RESULT_NOTHING = "Ничего не найдено"; //use
-const RESULT_SERVER_ERROR = "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз"; //use
+const RESULT_NOTHING = "Ничего не найдено";
+const RESULT_SERVER_ERROR = "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз";
 const RESULT_NO_SAVED = "Нет сохранённых фильмов";
 
 const getErrorMessage = (errorStatus, defaultText) => {
@@ -19,7 +19,6 @@ const getErrorMessage = (errorStatus, defaultText) => {
       return defaultText;
   }
 };
-
 
 export {
   USER_ALREADY_EXISTS,
