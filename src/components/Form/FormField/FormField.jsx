@@ -1,6 +1,6 @@
 import "./FormField.css";
 
-export default function FormField({ subtitle, type, name, errors, handleChange, values }) {
+export default function FormField({ subtitle, type, name, errors, handleChange, values, isSending, isInputValid, pattern }) {
   return (
     <label className="form__label">
       <span className="form__subtitle">{subtitle}</span>
@@ -13,6 +13,9 @@ export default function FormField({ subtitle, type, name, errors, handleChange, 
         minLength="2"
         maxLength="30"
         placeholder=""
+        disabled={isSending}
+        isInputValid={isInputValid[name]}
+        pattern={pattern}
         required />
       <span className="form__input-error">{errors[name]}</span>
     </label>

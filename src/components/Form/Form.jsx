@@ -2,9 +2,10 @@ import { Link } from "react-router-dom";
 import "./Form.css";
 import FormField from "./FormField/FormField.jsx";
 import useFormValidation from "../../utils/useFormValidation";
+import { EMAIL_REGEX, NAME_REGEX } from "../../utils/constants";
 
-export default function Form({ name, onSubmit, errorMessage }) {
-  const { values, errors, isValid, handleChange } = useFormValidation();
+export default function Form({ name, onSubmit, errorMessage, isSending }) {
+  const { values, errors, isValid, handleChange, isInputValid } = useFormValidation();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +24,9 @@ export default function Form({ name, onSubmit, errorMessage }) {
               values={values}
               handleChange={handleChange}
               errors={errors}
+              isSending={isSending}
+              isInputValid={isInputValid}
+              pattern={NAME_REGEX}
             />,
           login: null
         }[name]}
@@ -34,6 +38,9 @@ export default function Form({ name, onSubmit, errorMessage }) {
           values={values}
           handleChange={handleChange}
           errors={errors}
+          isSending={isSending}
+          isInputValid={isInputValid}
+          pattern={EMAIL_REGEX}
         />
 
         <FormField
@@ -43,14 +50,16 @@ export default function Form({ name, onSubmit, errorMessage }) {
           values={values}
           handleChange={handleChange}
           errors={errors}
+          isSending={isSending}
+          isInputValid={isInputValid}
         />
       </fieldset>
 
       <div className="form__submit-container">
         <span className="form__submit-error">{errorMessage}</span>
         {{
-          register: <button type="submit" className={`btn-submit ${!isValid && "btn-submit_disactive"} button-hover`} >Зарегистрироваться</button>,
-          login: <button type="submit" className={`btn-submit ${!isValid && "btn-submit_disactive"} button-hover`} >Войти</button>
+          register: <button type="submit" className={`btn-submit ${!isValid && "btn-submit_disactive"} button-hover`} disabled={!isValid || isSending}>Зарегистрироваться</button>,
+          login: <button type="submit" className={`btn-submit ${!isValid && "btn-submit_disactive"} button-hover`} disabled={!isValid || isSending}>Войти</button>
         }[name]}
 
         <p className="form__submit-question">
@@ -58,12 +67,18 @@ export default function Form({ name, onSubmit, errorMessage }) {
             register:
               <>
                 Уже зарегистрированы?
-                <Link to="/signin" className="form__submit-link link-hover">Войти</Link>
+
+                  <Link to="/signin" className="form__submit-link link-hover">Войти</Link>
+
+
               </>,
             login:
               <>
                 Ещё не зарегистрированы?
-                <Link to="/signup" className="form__submit-link link-hover">Регистрация</Link>
+
+                  <Link to="/signup" className="form__submit-link link-hover">Регистрация</Link>
+
+
               </>
           }[name]}
         </p>

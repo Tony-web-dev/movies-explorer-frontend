@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Main from "../Main/Main.jsx";
 import Movies from "../Movies/Movies.jsx";
 import SavedMovies from "../SavedMovies/SavedMovies.jsx";
@@ -16,6 +16,7 @@ import { STATUS_FAIL, STATUS_SUCCESS } from "../../utils/constants.js";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 export default function App() {
+  const location = useLocation();
   const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState({});
   const [isSending, setIsSending] = useState(false);
@@ -43,9 +44,7 @@ export default function App() {
         setTooltipStatus(STATUS_FAIL);
         console.error("Ошибка при регистрации:", error);
       })
-      .finally(() => {
-        setIsSending(false);
-      })
+      .finally(() => setIsSending(false));
   }
 
   function handleLogin({email, password}) {
@@ -68,6 +67,10 @@ export default function App() {
       })
       .finally(() => setIsSending(false));
   }
+
+  useEffect(() => {
+    setErrorMessage("")
+  }, [location])
 
   const checkToken = useCallback(() => {
     const token = localStorage.getItem("jwt");
@@ -154,31 +157,41 @@ export default function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <Routes>
+
           <Route path="/" element={
             <Main
               isLoggedIn={isLoggedIn} />
-            } />
+          } />
+
           <Route path="/signup" element={
-            <Register
-              onRegister={handleRegister}
-              errorMessage={errorMessage} />
-            } />
+            isLoggedIn ? <Navigate to="/" replace /> :
+              <Register
+                onRegister={handleRegister}
+                errorMessage={errorMessage}
+                isSending={isSending} />
+          } />
+
           <Route path="/signin" element={
-            <Login
-              onLogin={handleLogin}
-              errorMessage={errorMessage} />
-            } />
-          <Route element={<ProtectedRoute isLoggedIn={isLoggedIn} />}>
+            isLoggedIn ? <Navigate to="/" replace /> :
+              <Login
+                onLogin={handleLogin}
+                errorMessage={errorMessage}
+                isSending={isSending} />
+          } />
+
+          <Route element={<ProtectedRoute />}>
             <Route path="/movies" element={
               <Movies
                 toggleSaveMovie={toggleSaveMovie}
                 savedMovies={isSavedMovies} />
-              } />
+            } />
+
             <Route path="/saved-movies" element={
               <SavedMovies
-              onDelete={handleDeleteMovie}
-              savedMovies={isSavedMovies} />
+                onDelete={handleDeleteMovie}
+                savedMovies={isSavedMovies} />
             } />
+
             <Route path="/profile" element={
               <Profile
                 onLogout={handleLogout}
@@ -189,9 +202,11 @@ export default function App() {
                 setIsError={setIsError}
                 errorMessage={errorMessage}
                 isSending={isSending} />
-              } />
+            } />
           </Route>
+
           <Route path="*" element={<NotFound />} />
+
         </Routes>
         <InfoTooltip
           tooltipStatus={tooltipStatus}

@@ -1,15 +1,19 @@
 const MOVIES_API_BASE_URL = "https://api.nomoreparties.co/beatfilm-movies";
-const API_BASE_URL = "https://api.diplomtimush.nomoredomainsicu.ru";
+// const API_BASE_URL = "https://api.diplomtimush.nomoredomainsicu.ru";
+const API_BASE_URL = "http://localhost:3000";
 
 const STATUS_SUCCESS = "success";
 const STATUS_FAIL = "fail";
 
 const SHORT_MOVIE_DURATION = 40;
 
+const EMAIL_REGEX = "^\\S+@\\S+\\.\\S+$";
+const NAME_REGEX = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
+
 const DESKTOP_MAX_RESOLUTION = 1280;
 const DESKTOP_LAPTOP_RESOLUTION = 1024;
 const TABLET_RESOLUTION = 768;
-const MOBILE_RESOLUTION = 320;
+const MOBILE_RESOLUTION = 481;
 const INIT_MAX_DESKTOP = 16;
 const INIT_LAPTOP_DESKTOP = 12;
 const INIT_TABLET = 8;
@@ -24,6 +28,8 @@ export {
   STATUS_SUCCESS,
   STATUS_FAIL,
   SHORT_MOVIE_DURATION,
+  EMAIL_REGEX,
+  NAME_REGEX,
   DESKTOP_MAX_RESOLUTION,
   DESKTOP_LAPTOP_RESOLUTION,
   TABLET_RESOLUTION,

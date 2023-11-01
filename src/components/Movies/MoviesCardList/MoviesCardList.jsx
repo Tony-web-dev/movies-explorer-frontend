@@ -3,7 +3,7 @@ import MoviesCard from "../MoviesCard/MoviesCard.jsx";
 import { useEffect, useState } from "react";
 import Preloader from "../../Preloader/Preloader.jsx";
 import { useLocation } from "react-router-dom";
-import { DESKTOP_LAPTOP_RESOLUTION, DESKTOP_MAX_RESOLUTION, INIT_MAX_DESKTOP, INIT_LAPTOP_DESKTOP, INIT_MOBILE, INIT_TABLET, STEP_DESKTOP, STEP_MOBILE, STEP_TABLET, TABLET_RESOLUTION } from "../../../utils/constants";
+import { DESKTOP_LAPTOP_RESOLUTION, DESKTOP_MAX_RESOLUTION, INIT_MAX_DESKTOP, INIT_LAPTOP_DESKTOP, INIT_MOBILE, INIT_TABLET, STEP_DESKTOP, STEP_MOBILE, STEP_TABLET, TABLET_RESOLUTION, MOBILE_RESOLUTION } from "../../../utils/constants";
 import { RESULT_NOTHING, RESULT_NO_QUERY, RESULT_NO_SAVED, RESULT_SERVER_ERROR } from "../../../utils/responses";
 
 
@@ -30,7 +30,7 @@ export default function MoviesCardList({
       additionalCounter.init = INIT_TABLET
       additionalCounter.step = STEP_MOBILE
     }
-    if (window.innerWidth < TABLET_RESOLUTION) {
+    if (window.innerWidth < MOBILE_RESOLUTION) {
       additionalCounter.init = INIT_MOBILE
       additionalCounter.step = STEP_MOBILE
     }

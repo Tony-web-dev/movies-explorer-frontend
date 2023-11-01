@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import useFormValidation from "../../utils/useFormValidation.js";
 import { useContext, useEffect } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
+import { EMAIL_REGEX, NAME_REGEX } from "../../utils/constants";
 
 export default function Profile({ onEdit, isEdit, setIsEdit, onLogout, isError, setIsError, isSending, errorMessage }) {
-  const { values, handleChange, errors, isValid, resetForm } = useFormValidation();
+  const { values, handleChange, errors, isValid, resetForm, isInputValid } = useFormValidation();
   const currentUser = useContext(CurrentUserContext);
 
 
@@ -36,7 +37,8 @@ export default function Profile({ onEdit, isEdit, setIsEdit, onLogout, isError, 
           <form
             className="profile__form"
             name="profile-name"
-            onSubmit={handleSubmit}>
+            onSubmit={handleSubmit}
+            >
             <fieldset className="profile__form-fieldset">
               <label className="profile__label">
                 <span className="profile__subtitle">Имя</span>
@@ -47,7 +49,9 @@ export default function Profile({ onEdit, isEdit, setIsEdit, onLogout, isError, 
                   placeholder="Ваше имя"
                   defaultValue={currentUser.name || ""}
                   value={values.name}
+                  isInputValid={isInputValid.name}
                   onChange={handleChange}
+                  pattern={NAME_REGEX}
                   minLength="2"
                   maxLength="30"
                   disabled={isSending || !isEdit}
@@ -59,13 +63,15 @@ export default function Profile({ onEdit, isEdit, setIsEdit, onLogout, isError, 
               <label className="profile__label">
                 <span className="profile__subtitle">E-mail</span>
                 <input
-                  type="text"
+                  type="email"
                   className="profile__input input-focus"
                   name="email"
                   placeholder="Ваш e-mail"
                   defaultValue={currentUser.email || ""}
                   value={values.email}
+                  isInputValid={isInputValid.email}
                   onChange={handleChange}
+                  pattern={EMAIL_REGEX}
                   minLength="2"
                   maxLength="30"
                   disabled={isSending || !isEdit}
